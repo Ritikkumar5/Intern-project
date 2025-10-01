@@ -1,22 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout.jsx";
+import RecruiterLayout from "./components/layout/RecruiterLayout.jsx";
 
-// Layouts
-import Layout from "./Components/layout/Layout.jsx";
-import RecruiterLayout from "./Components/layout/RecruiterLayout.jsx";
+import PostJob from "./components/careers/PostJob.jsx";
+import ApprovalQueue from "./components/careers/ApprovalQueue.jsx";
+import PublishedJobs from "./components/careers/PublishedJobs.jsx";
+import StudentTracking from "./components/careers/StudentTracking.jsx";
 
-// Placement Officer Pages
-import PostJob from "./pages/placementOfficer/PostJob.jsx";
-import ApprovalQueue from "./pages/placementOfficer/ApprovalQueue.jsx";
-import PublishedJobs from "./pages/placementOfficer/PublishedJobs.jsx";
-import StudentTracking from "./pages/placementOfficer/StudentTracking.jsx";
-import Landing from "./Components/Landing.jsx";
 
-// Recruiter Pages
-import RecruiterPostJob from "./pages/recruiter/RecruiterPostJob.jsx";
-// import MyListings from "./pages/recruiter/MyListings.jsx";
-// import ApplicationsReceived from "./pages/recruiter/ApplicationsReceived.jsx";
-// import AiShortlist from "./pages/recruiter/AiShortlist.jsx";
+import RecruiterPostJob from "./components/careers/RecruiterPostJob.jsx";
 
 function App() {
   return (
@@ -28,8 +21,6 @@ function App() {
           element={
             <Layout>
               <Routes>
-                <Route path="landing" element={<Landing />} />
-        
                 <Route path="post-job" element={<PostJob />} />
                 <Route path="approval" element={<ApprovalQueue />} />
                 <Route path="published-jobs" element={<PublishedJobs />} />
@@ -46,9 +37,7 @@ function App() {
             <RecruiterLayout>
               <Routes>
                 <Route path="post-job" element={<RecruiterPostJob />} />
-                {/* <Route path="my-listings" element={<MyListings />} /> */}
-                {/* <Route path="applications" element={<ApplicationsReceived />} /> */}
-                {/* <Route path="ai-shortlist" element={<AiShortlist />} /> */}
+               
               </Routes>
             </RecruiterLayout>
           }
