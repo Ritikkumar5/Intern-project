@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Outlet } from "react-router-dom";
 
 const events = [
   { id: 1, title: "Placement Drive at University of Technology", date: "Sep 18, 2025", icon: "💼" },
@@ -78,8 +78,10 @@ const Layout = ({ children }) => {
             </>
           )}
         </aside>
-        {/* Main Content */}
-        <main className="flex-1 p-4 md:p-8">{children}</main>
+        {/* Main Content  */}
+        <main className="flex-1 p-4 md:p-8">
+          {children || <Outlet />}
+        </main>
       </div>
     </div>
   );
